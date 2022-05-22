@@ -1,25 +1,39 @@
 import React from "react";
 
-const Tool = () => {
+const Tool = ({
+  tool: { name, img, desc, price, minOrderQuantity, availableQuantity },
+}) => {
   return (
     <div className="card w-full bg-base-100 shadow-xl">
       <figure>
-        <img
-          src="https://api.lorem.space/image/shoes?w=400&h=225"
-          alt="Shoes"
-          className="w-full object-cover"
-        />
+        <img src={img} alt="Shoes" className="w-full object-cover" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">
-          Shoes!
-          <div className="badge badge-secondary">NEW</div>
-        </h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <div className="badge badge-outline">Fashion</div>
-          <div className="badge badge-outline">Products</div>
+        <div className="card-actions justify-between items-center">
+          <h2 className="card-title">
+            {name}
+            {/* <div className="badge badge-secondary">NEW</div> */}
+          </h2>
+          <div>
+            Price:{" "}
+            <span className="badge badge-accent text-xl font-bold p-3">
+              ${price}
+            </span>
+          </div>
         </div>
+
+        <p>{desc}</p>
+        <div className="">
+          <div className="min-order">
+            Minimum Order:{" "}
+            <span className="text-secondary">{minOrderQuantity}</span>
+          </div>
+          <div className="available-quantity">
+            Available Quantity:{" "}
+            <span className="text-accent">{availableQuantity}</span>
+          </div>
+        </div>
+        <button class="btn btn-primary">Get It Now</button>
       </div>
     </div>
   );

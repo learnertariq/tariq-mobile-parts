@@ -10,14 +10,14 @@ const Tool = ({
         <img src={img} alt="Shoes" className="w-full object-cover" />
       </figure>
       <div className="card-body">
-        <div className="card-actions justify-between items-center">
+        <div className="card-actions justify-between items-start flex-col">
           <h2 className="card-title">
             {name}
             {/* <div className="badge badge-secondary">NEW</div> */}
           </h2>
           <div>
             Price:{" "}
-            <span className="badge badge-accent text-xl font-bold p-3">
+            <span className="badge badge-accent text-md font-bold p-2">
               ${price}
             </span>
           </div>

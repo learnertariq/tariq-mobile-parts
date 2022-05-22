@@ -1,5 +1,6 @@
 import React from "react";
 import Banner from "../components/Home/Banner";
+import BusinessProfile from "../components/Home/BusinessProfile";
 import HomeReviews from "../components/Home/HomeReviews";
 import Tools from "../components/Home/Tools";
 import "../styles/Home.css";
@@ -10,6 +11,7 @@ const Home = () => {
       <Banner />
       <Tools />
       <HomeReviews />
+      <BusinessProfile />
     </section>
   );
 };

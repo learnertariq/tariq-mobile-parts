@@ -1,0 +1,26 @@
+[
+  {
+    "name": "IC",
+    "img": "https://i.ibb.co/ZYWb047/ic.webp",
+    "desc": "IC to replace mobile processor",
+    "min-order-quantity": 50,
+    "available-quantity": 300,
+    "price": 500
+  },
+  {
+    "name": "IC",
+    "img": "https://i.ibb.co/ZYWb047/ic.webp",
+    "desc": "IC to replace mobile processor",
+    "min-order-quantity": 50,
+    "available-quantity": 300,
+    "price": 500
+  },
+  {
+    "name": "IC",
+    "img": "https://i.ibb.co/ZYWb047/ic.webp",
+    "desc": "IC to replace mobile processor",
+    "min-order-quantity": 50,
+    "available-quantity": 300,
+    "price": 500
+  }
+]

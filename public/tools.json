@@ -1,5 +1,6 @@
 [
   {
+    "_id": 1,
     "name": "IC",
     "img": "https://i.ibb.co/ZYWb047/ic.webp",
     "desc": "IC to replace mobile processor",
@@ -8,6 +9,7 @@
     "price": 500
   },
   {
+    "_id": 2,
     "name": "IC",
     "img": "https://i.ibb.co/ZYWb047/ic.webp",
     "desc": "IC to replace mobile processor",
@@ -16,6 +18,7 @@
     "price": 500
   },
   {
+    "_id": 3,
     "name": "IC",
     "img": "https://i.ibb.co/ZYWb047/ic.webp",
     "desc": "IC to replace mobile processor",

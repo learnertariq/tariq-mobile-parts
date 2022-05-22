@@ -12,7 +12,7 @@ const Tools = () => {
       <h2 className="text-center text-4xl">Tools & Parts</h2>
       <div className="tools-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         {data?.data?.map((tool) => (
-          <Tool />
+          <Tool key={tool._id} tool={tool} />
         ))}
       </div>
     </section>

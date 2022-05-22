@@ -5,3 +5,61 @@
 .carousel {
   height: 450px;
 }
+
+/* Contact starts */
+.contact-section {
+  padding: 80px 0;
+  text-align: center;
+  width: 50%;
+  border-top-right-radius: 200px;
+  border-bottom-left-radius: 200px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.8) 0px 3px 7px -3px;
+}
+.contact-section:hover {
+  border-top-left-radius: 200px;
+  border-bottom-right-radius: 200px;
+  transition: 0.5s;
+}
+
+.inner-width {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.name,
+.email,
+.message {
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ff8066;
+  color: #888;
+  padding: 10px 6px;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.name {
+  float: left;
+  width: 270px;
+}
+
+.email {
+  float: right;
+  width: 270px;
+}
+
+.message {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .name,
+  .email {
+    width: 100%;
+  }
+}
+/* Contact ends */

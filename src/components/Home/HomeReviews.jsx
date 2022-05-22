@@ -12,12 +12,12 @@ const HomeReviews = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <section className="mt-8">
+    <section className="container mx-auto mt-8">
       <div className="home-reviews-header text-center">
         <h6>Customer Stories</h6>
         <h2 className="text-4xl">What Our Members are Saying</h2>
       </div>
-      <div className="reviews p-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div className="reviews p-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {data?.data?.slice(0, 3).map((r) => (
           <Review key={r._id} review={r} />
         ))}

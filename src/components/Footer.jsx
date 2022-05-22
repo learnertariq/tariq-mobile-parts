@@ -5,18 +5,22 @@ const Footer = () => {
     <footer className=" p-10 bg-base-300">
       <div className="footer container mx-auto  text-base-content">
         <div>
-          <span className="footer-title">Services</span>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <span className="footer-title">PRODUCTS</span>
+          <a className="link link-hover">IC</a>
+          <a className="link link-hover">Display</a>
+          <a className="link link-hover">Speaker</a>
+          <a className="link link-hover">Network IC</a>
         </div>
         <div>
           <span className="footer-title">Company</span>
           <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <a className="link link-hover">Affiliates</a>
+          <a className="link link-hover">Blogs</a>
+        </div>
+        <div>
+          <span className="footer-title">Support</span>
+          <a className="link link-hover">Contact us</a>
+          <a className="link link-hover">FAQ</a>
         </div>
         <div>
           <span className="footer-title">Social</span>

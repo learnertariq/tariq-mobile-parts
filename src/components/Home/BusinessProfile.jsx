@@ -1,3 +1,10 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPeopleGroup,
+  faMoneyCheck,
+  faHeart,
+  faScrewdriverWrench,
+} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
 const BusinessProfile = () => {
@@ -11,20 +18,33 @@ const BusinessProfile = () => {
       <div className="max-w-[800px] mx-auto">
         <div className="profile-features-container flex justify-center items-center flex-wrap gap-3">
           <div className="profile-feature flex flex-col gap-2 items-center bg-cyan-900 w-40 rounded-xl p-3">
-            <h3 className="text-4xl font-bold">73</h3>
-            <div>Countries</div>
+            <FontAwesomeIcon
+              className="text-accent text-6xl"
+              icon={faPeopleGroup}
+            />
+            <h3 className="text-4xl font-bold">300+</h3>
+            <div>Happy Customers</div>
           </div>
           <div className="profile-feature flex flex-col gap-2 items-center bg-cyan-900 w-40 rounded-xl p-3">
-            <h3 className="text-4xl font-bold">723+</h3>
-            <div>Happy Clients</div>
+            <FontAwesomeIcon
+              className="text-accent text-6xl"
+              icon={faMoneyCheck}
+            />
+            <h3 className="text-4xl font-bold">73M+</h3>
+            <div>Annual Revenue</div>
           </div>
           <div className="profile-feature flex flex-col gap-2 items-center bg-cyan-900 w-40 rounded-xl p-3">
-            <h3 className="text-4xl font-bold">1200+</h3>
-            <div>Feedbacks</div>
+            <FontAwesomeIcon className="text-accent text-6xl" icon={faHeart} />
+            <h3 className="text-4xl font-bold">12k+</h3>
+            <div>Reviews</div>
           </div>
           <div className="profile-feature flex flex-col gap-2 items-center bg-cyan-900 w-40 rounded-xl p-3">
+            <FontAwesomeIcon
+              className="text-accent text-6xl"
+              icon={faScrewdriverWrench}
+            />
             <h3 className="text-4xl font-bold">600+</h3>
-            <div>Projects</div>
+            <div>Tools</div>
           </div>
         </div>
 

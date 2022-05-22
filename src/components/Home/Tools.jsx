@@ -2,11 +2,14 @@ import React from "react";
 import { useQuery } from "react-query";
 import Tool from "./Tool";
 import http from "../../service/http";
+import Loading from "../Loading";
 
 const Tools = () => {
   const { data, isLoading, error } = useQuery("tools", async () => {
     return await http.get("tools.json");
   });
+
+  if (isLoading) return <Loading />;
   return (
     <section className="container mx-auto mt-6">
       <h2 className="text-center text-4xl">Tools & Parts</h2>

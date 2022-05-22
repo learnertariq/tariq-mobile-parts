@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Tool = ({
-  tool: { name, img, desc, price, minOrderQuantity, availableQuantity },
+  tool: { _id, name, img, desc, price, minOrderQuantity, availableQuantity },
 }) => {
   return (
     <div className="card w-full bg-base-100 shadow-xl">
@@ -33,7 +34,9 @@ const Tool = ({
             <span className="text-accent">{availableQuantity}</span>
           </div>
         </div>
-        <button class="btn btn-primary">Get It Now</button>
+        <Link to={`/purchase/${_id}`} className="btn btn-primary">
+          Get It Now
+        </Link>
       </div>
     </div>
   );

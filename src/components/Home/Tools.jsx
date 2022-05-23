@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import Tool from "./Tool";
 import http from "../../service/http";
-import Loading from "../Loading";
+import Loading from "../Shared/Loading";
 
 const Tools = () => {
   const { data, isLoading, error } = useQuery("tools", async () => {

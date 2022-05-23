@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import http from "../../service/http";
-import Loading from "../Loading";
-import Review from "../Review";
+import Loading from "../Shared/Loading";
+import Review from "../Shared/Review";
 
 const HomeReviews = () => {
   const { data, isLoading, error } = useQuery("reviews", async () => {

@@ -10,7 +10,8 @@ import {
 import googleLogo from "../assets/auth/google.png";
 import auth from "../utils/firebase.init";
 import userService from "../service/userService";
-import Loading from "../components/Loading";
+import Loading from "../components/Shared/Loading";
+import Alert from "../components/Shared/Alert";
 
 const Register = () => {
   const {
@@ -45,9 +46,10 @@ const Register = () => {
   }, [user, userGoogle]);
 
   const onSubmit = async (data, e) => {
+    // return console.log(data);
     await createUserWithEmailAndPassword(data.email, data.password);
     // update display name
-    await updateProfile(user, { displayName: data.name });
+    await updateProfile({ displayName: data.name });
 
     // clear the form
     e.target.reset();
@@ -92,29 +94,12 @@ const Register = () => {
         />
         <br />
         {(error || errorGoogle) && (
-          <div className="alert alert-error shadow-lg">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="stroke-current flex-shrink-0 h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <span>{error?.message || errorGoogle?.message}</span>
-            </div>
-          </div>
+          <Alert>{error?.message || errorGoogle?.message}</Alert>
         )}
         <br />
 
         <button type="submit" className="btn btn-primary tracking-widest">
-          Login
+          Register
         </button>
       </form>
     </section>

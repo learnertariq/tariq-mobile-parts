@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Logout from "./components/Logout";
-import RequireAuth from "./components/RequireAuth";
+import Logout from "./components/Auth/Logout";
+import RequireAuth from "./components/Auth/RequireAuth";
+import Footer from "./components/Shared/Footer";
+import Header from "./components/Shared/Header";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
 import Purchase from "./pages/Purchase";
 import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 function App() {
   return (

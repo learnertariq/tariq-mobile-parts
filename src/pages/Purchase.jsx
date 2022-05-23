@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import Alert from "../components/Shared/Alert";
 import http from "../service/http";
 import auth from "../utils/firebase.init";
@@ -38,6 +39,7 @@ const Purchase = () => {
     setCustomError({});
     setSubmitDisabled(false);
 
+    // Checking for right quantity value
     if (
       watchQuantity < tool?.data?.minOrderQuantity ||
       watchQuantity > tool?.data?.availableQuantity
@@ -45,18 +47,26 @@ const Purchase = () => {
       setSubmitDisabled(true);
       setCustomError({
         quantityError:
-          "Quantity should be greater than minimum quantity and less than available quantity",
+          "Quantity should be less than minimum quantity or greater than available quantity",
       });
     }
   }, [watchQuantity]);
 
-  console.log(parseInt(watchQuantity));
+  const onSubmit = async (data, e) => {
+    try {
+      await http.post("/orders", {
+        email: user.email,
+        address: data.address,
+        phone: data.phone,
+        toolId: tool.data._id,
+        toolName: tool.data.name,
+        quantity: data.quantity,
+      });
 
-  const onSubmit = (data, e) => {
-    setCustomError({});
-
-    console.log(data);
-    console.log(errors);
+      toast.success("Order successfully placed");
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   return (

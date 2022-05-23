@@ -5,7 +5,7 @@ import ConfirmModal from "../Shared/ConfirmModal";
 import Loading from "../Shared/Loading";
 
 const MyOrders = () => {
-  const { data, isLoading, error } = useQuery("orders", async () => {
+  const { data, isLoading, error, refetch } = useQuery("orders", async () => {
     return await http.get("/orders");
   });
   const [deletingOrder, setDeletingOrder] = useState(null);
@@ -25,7 +25,8 @@ const MyOrders = () => {
               <th>Name</th>
               <th>Total</th>
               <th>Status</th>
-              <th></th>
+              <th>TXID</th>
+              <th>Cancel</th>
             </tr>
           </thead>
           <tbody>
@@ -34,27 +35,28 @@ const MyOrders = () => {
                 <th>{index + 1}</th>
                 <td>{order.toolName}</td>
                 <td>{order.total}</td>
-                {order.paid && (
-                  <td>
-                    <span className="text-success">Paid</span>
-                  </td>
-                )}
-                {!order.paid && (
-                  <>
-                    <td>
-                      <button className="btn btn-sm text-primary">Pay</button>
-                    </td>
-                    <td>
-                      <label
-                        onClick={() => setDeletingOrder(order)}
-                        for="order-cancel-modal"
-                        class="btn btn-secondary btn-sm"
-                      >
-                        cancel
-                      </label>
-                    </td>
-                  </>
-                )}
+
+                <td>
+                  {order.paid && <span className="text-success">Paid</span>}
+                  {!order.paid && (
+                    <button className="btn btn-sm text-primary">Pay</button>
+                  )}
+                </td>
+                <td>
+                  {order.paid && <span className="text-success">TXid</span>}
+                </td>
+
+                <td>
+                  {!order.paid && (
+                    <label
+                      onClick={() => setDeletingOrder(order)}
+                      htmlFor="order-cancel-modal"
+                      className="btn btn-secondary btn-sm"
+                    >
+                      cancel
+                    </label>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -64,6 +66,7 @@ const MyOrders = () => {
       {/* Modal Starts */}
       {deletingOrder && (
         <ConfirmModal
+          refetch={refetch}
           deletingOrder={deletingOrder}
           setDeletingOrder={setDeletingOrder}
         />

@@ -2,12 +2,13 @@ import React from "react";
 import { toast } from "react-toastify";
 import http from "../../service/http";
 
-const ConfirmModal = ({ deletingOrder, setDeletingOrder }) => {
+const ConfirmModal = ({ deletingOrder, setDeletingOrder, refetch }) => {
   const handleCancelOrder = async () => {
     try {
       await http.delete(`/orders/${deletingOrder._id}`);
 
       toast.success("Order successfully Canceled");
+      refetch();
     } catch (error) {
       toast.error(error.message);
     } finally {
@@ -17,18 +18,20 @@ const ConfirmModal = ({ deletingOrder, setDeletingOrder }) => {
 
   return (
     <div>
-      <input type="checkbox" id="order-cancel-modal" class="modal-toggle" />
-      <div class="modal">
-        <div class="modal-box">
-          <h3 class="font-bold text-lg">Are you sure to cancel the order?</h3>
-          <div class="modal-action">
-            <label for="order-cancel-modal" class="btn">
+      <input type="checkbox" id="order-cancel-modal" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">
+            Are you sure to cancel the order?
+          </h3>
+          <div className="modal-action">
+            <label htmlFor="order-cancel-modal" className="btn">
               No
             </label>
             <label
               onClick={handleCancelOrder}
-              for="order-cancel-modal"
-              class="btn"
+              htmlFor="order-cancel-modal"
+              className="btn"
             >
               Yes
             </label>

@@ -19,7 +19,7 @@ const Register = () => {
     watch,
     formState: { errors },
   } = useForm();
-  //
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -32,8 +32,6 @@ const Register = () => {
   ///////////////// Firebase methods
 
   useEffect(() => {
-    console.log(user || userGoogle);
-    return;
     if (user || userGoogle) {
       userService.login({
         email: user?.user?.email || userGoogle?.user?.email,
@@ -56,14 +54,9 @@ const Register = () => {
   };
 
   if (loading || loadingGoogle) {
-    return (
-      <div className="container text-center my-5">
-        <Loading />
-      </div>
-    );
+    return <Loading />;
   }
 
-  //
   return (
     <section className="max-w-sm mx-auto mb-12">
       <h2 className="text-4xl mb-8 font-bold text-center">Register</h2>

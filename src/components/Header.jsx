@@ -1,7 +1,11 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../utils/firebase.init";
 
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
+
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
@@ -34,12 +38,25 @@ const Header = () => {
               </li>
             </ul>
           </li>
+          {!user && (
+            <>
+              <li>
+                <Link to="/register">Register</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            </>
+          )}
+          {user && 
+          <>
+          <li>{user?.displayName}</li>
           <li>
-            <Link to="/register">Register</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
+                <Link to="/logout">Logout</Link>
+              </li>
+          </>
+          }
+          {console.log(user?.email)}
         </ul>
       </div>
     </div>

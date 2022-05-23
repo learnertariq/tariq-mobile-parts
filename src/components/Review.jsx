@@ -4,7 +4,6 @@ import React from "react";
 import Rating from "react-rating";
 
 const Review = ({ review: { name, text, img, rating } }) => {
-  console.log(text);
   return (
     <div className="review bg-indigo-900 p-6 rounded-xl">
       <div className="review-header flex gap-3 items-center">

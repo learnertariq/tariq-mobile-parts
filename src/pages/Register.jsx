@@ -2,16 +2,17 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
+  useCreateUserWithEmailAndPassword,
   useSendPasswordResetEmail,
-  useSignInWithEmailAndPassword,
   useSignInWithGoogle,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import googleLogo from "../assets/auth/google.png";
 import auth from "../utils/firebase.init";
 import userService from "../service/userService";
 import Loading from "../components/Loading";
 
-const Login = () => {
+const Register = () => {
   const {
     register,
     handleSubmit,
@@ -23,8 +24,9 @@ const Login = () => {
   const location = useLocation();
 
   ///////////////// Firebase methods
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] =
     useSignInWithGoogle(auth);
   ///////////////// Firebase methods
@@ -45,8 +47,9 @@ const Login = () => {
   }, [user, userGoogle]);
 
   const onSubmit = async (data, e) => {
-    // sign in user
-    await signInWithEmailAndPassword(data.email, data.password);
+    await createUserWithEmailAndPassword(data.email, data.password);
+    // update display name
+    await updateProfile(user, { displayName: data.name });
 
     // clear the form
     e.target.reset();
@@ -63,7 +66,7 @@ const Login = () => {
   //
   return (
     <section className="max-w-sm mx-auto mb-12">
-      <h2 className="text-4xl mb-8 font-bold text-center">Login</h2>
+      <h2 className="text-4xl mb-8 font-bold text-center">Register</h2>
       <div className="social-container mb-8 text-center">
         <button
           className="btn btn-primary btn-outline rounded-full"
@@ -74,6 +77,13 @@ const Login = () => {
       </div>
       <div className="divider">OR</div>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          type="name"
+          {...register("name", { required: true })}
+          placeholder="Name"
+          className="input input-bordered input-primary w-full w-full mb-3"
+        />
+        <br />
         <input
           type="email"
           {...register("email", { required: true })}
@@ -118,4 +128,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

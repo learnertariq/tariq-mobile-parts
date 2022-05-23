@@ -14,7 +14,7 @@ const BusinessProfile = () => {
         <h2 className="text-4xl mb-3">Billions of Technicians Trust Us</h2>
         <h4 className="text-xl">We Provide You Most Value</h4>
       </div>
-      <div class="divider w-1/2 mx-auto"></div>
+      <div className="divider w-1/2 mx-auto"></div>
       <div className="max-w-[800px] mx-auto">
         <div className="profile-features-container flex justify-center items-center flex-wrap gap-3">
           <div className="profile-feature flex flex-col gap-2 items-center bg-cyan-900 w-40 rounded-xl p-3">
@@ -48,11 +48,11 @@ const BusinessProfile = () => {
           </div>
         </div>
 
-        <div class="card  bg-base-100 shadow-xl image-full mx-0 md:mx-20 my-4">
-          <div class="card-body">
-            <div class="card-actions justify-center items-center">
+        <div className="card  bg-base-100 shadow-xl image-full mx-0 md:mx-20 my-4">
+          <div className="card-body">
+            <div className="card-actions justify-center items-center">
               <p>We value your response</p>
-              <button class="btn btn-primary">Explore Our Products</button>
+              <button className="btn btn-primary">Explore Our Products</button>
             </div>
           </div>
         </div>

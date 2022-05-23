@@ -25,15 +25,15 @@ const BlogPosts = () => {
       <div className="posts-container grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {data.map((item, index) => (
           <div key={index} className="blog-post bg-indigo-900 rounded-xl">
-            <div class="card lg:card-side bg-base-100 shadow-xl">
+            <div className="card lg:card-side bg-base-100 shadow-xl">
               <figure>
                 <img src={item.img} alt="Album" />
               </figure>
-              <div class="card-body">
-                <h2 class="card-title">{item.title}</h2>
+              <div className="card-body">
+                <h2 className="card-title">{item.title}</h2>
                 <p>{item.desc.slice(0, 100)}...</p>
-                <div class="card-actions justify-end">
-                  <button class="btn btn-primary mt-2">Read More</button>
+                <div className="card-actions justify-end">
+                  <button className="btn btn-primary mt-2">Read More</button>
                 </div>
               </div>
             </div>

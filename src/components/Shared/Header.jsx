@@ -50,10 +50,13 @@ const Header = () => {
           )}
           {user && (
             <>
-              <li>{user?.displayName}</li>
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
               <li>
                 <Link to="/logout">Logout</Link>
               </li>
+              <li className="items-center">{user?.displayName}</li>
             </>
           )}
         </ul>

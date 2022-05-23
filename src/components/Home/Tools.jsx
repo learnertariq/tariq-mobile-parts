@@ -6,7 +6,7 @@ import Loading from "../Loading";
 
 const Tools = () => {
   const { data, isLoading, error } = useQuery("tools", async () => {
-    return await http.get("tools.json");
+    return await http.get("/tools");
   });
 
   if (isLoading) return <Loading />;

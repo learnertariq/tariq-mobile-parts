@@ -6,7 +6,7 @@ import Review from "../Review";
 
 const HomeReviews = () => {
   const { data, isLoading, error } = useQuery("reviews", async () => {
-    return await http.get("reviews.json");
+    return await http.get("/reviews");
   });
 
   if (isLoading) return <Loading />;

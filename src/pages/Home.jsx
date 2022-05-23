@@ -11,8 +11,8 @@ const Home = () => {
   return (
     <section className="">
       <Banner />
-      {/* <Tools /> */}
-      {/* <HomeReviews /> */}
+      <Tools />
+      <HomeReviews />
       <BusinessProfile />
       <BlogPosts />
       <Contact />

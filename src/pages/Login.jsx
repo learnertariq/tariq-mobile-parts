@@ -34,6 +34,7 @@ const Login = () => {
     if (user || userGoogle) {
       userService.login({
         email: user?.user?.email || userGoogle?.user?.email,
+        name: user?.user?.displayName || userGoogle?.user?.displayName,
       });
 
       navigate(location?.state?.from?.pathname || "/", {

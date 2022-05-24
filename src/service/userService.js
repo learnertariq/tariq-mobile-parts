@@ -3,15 +3,22 @@ import http from "./http";
 const apiendpoint = "/login";
 http.setToken(getToken());
 
-const login = async ({ email }) => {
+const login = async (user) => {
   const { data, headers } = await http.post(apiendpoint, {
-    email,
+    email: user.email,
   });
 
   localStorage.setItem("x-auth-token", headers["x-auth-token"]);
 
   // explicitly set header token for SPA
   http.setToken(getToken());
+
+  // Creating User on backend
+  const { data: userData } = await http.post("/users", {
+    name: user.name,
+  });
+
+  console.log(userData);
 
   return data;
 };

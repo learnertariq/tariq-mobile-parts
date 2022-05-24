@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 import http from "../../service/http";
 import ConfirmModal from "../Shared/ConfirmModal";
 import Loading from "../Shared/Loading";
@@ -39,11 +40,18 @@ const MyOrders = () => {
                 <td>
                   {order.paid && <span className="text-success">Paid</span>}
                   {!order.paid && (
-                    <button className="btn btn-sm text-primary">Pay</button>
+                    <Link
+                      to={`/dashboard/payment/${order._id}`}
+                      className="btn btn-sm text-primary"
+                    >
+                      Pay
+                    </Link>
                   )}
                 </td>
                 <td>
-                  {order.paid && <span className="text-success">TXid</span>}
+                  {order.paid && (
+                    <span className="text-success">{order.txId}</span>
+                  )}
                 </td>
 
                 <td>

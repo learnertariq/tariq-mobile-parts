@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import http from "../../../service/http";
 
 const MakeAdmin = () => {
@@ -10,7 +11,13 @@ const MakeAdmin = () => {
   });
 
   const handleMakeAdmin = async (user) => {
-    console.log(user);
+    try {
+      await http.patch(`/users/admin`, { email: user.email, isAdmin: true });
+      toast.success("User updated successfully");
+      refetch();
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   return (
@@ -34,12 +41,14 @@ const MakeAdmin = () => {
                 <td>{user.email}</td>
                 <td className="text-success">{user.isAdmin ? "Admin" : ""}</td>
                 <td>
-                  <button
-                    onClick={() => handleMakeAdmin(user)}
-                    className="btn text-red-700 btn-xs"
-                  >
-                    Make Admin
-                  </button>
+                  {!user.isAdmin && (
+                    <button
+                      onClick={() => handleMakeAdmin(user)}
+                      className="btn text-red-700 btn-xs"
+                    >
+                      Make Admin
+                    </button>
+                  )}
                 </td>
               </tr>
             ))}

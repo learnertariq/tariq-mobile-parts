@@ -25,7 +25,7 @@ const Purchase = () => {
     watch,
     setValue,
     formState: { errors },
-  } = useForm({ mode: "onSubmit" });
+  } = useForm({ mode: "onBlur" });
   const watchQuantity = watch("quantity");
   const [submitDisabled, setSubmitDisabled] = useState(false);
 

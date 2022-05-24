@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import http from "../../service/http";
 import auth from "../../utils/firebase.init";
 import Alert from "../Shared/Alert";
+import Loading from "../Shared/Loading";
 
 const MyProfile = () => {
   const [user, loading, authError] = useAuthState(auth);
@@ -55,6 +56,8 @@ const MyProfile = () => {
       toast.error(error.message);
     }
   };
+
+  if (isLoading) return <Loading />;
 
   return (
     <section>

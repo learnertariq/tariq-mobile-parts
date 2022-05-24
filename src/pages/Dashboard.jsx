@@ -1,7 +1,22 @@
 import React from "react";
+import { useQuery } from "react-query";
 import { Link, Outlet } from "react-router-dom";
+import http from "../service/http";
+import Loading from "../components/Shared/Loading";
 
 const Dashboard = () => {
+  const {
+    data: userInfo,
+    isLoading,
+    error,
+    refetch,
+  } = useQuery("usersMe", async () => {
+    const { data } = await http.get("/users/me");
+    return data;
+  });
+
+  if (isLoading) return <Loading />;
+
   return (
     <section>
       <div className="flex justify-end lg:hidden">
@@ -40,14 +55,35 @@ const Dashboard = () => {
           <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
             <li>
-              <Link to="my-orders">My Orders</Link>
-            </li>
-            <li>
-              <Link to="add-review">Add a Review</Link>
-            </li>
-            <li>
               <Link to="my-profile">My Profile</Link>
             </li>
+            {console.log(userInfo)}
+            {!userInfo?.isAdmin && (
+              <>
+                <li>
+                  <Link to="my-orders">My Orders</Link>
+                </li>
+                <li>
+                  <Link to="add-review">Add a Review</Link>
+                </li>
+              </>
+            )}
+            {userInfo?.isAdmin && (
+              <>
+                <li>
+                  <Link to="manage-orders">Manage Orders</Link>
+                </li>
+                <li>
+                  <Link to="manage-products">Manage Products</Link>
+                </li>
+                <li>
+                  <Link to="add-product">Add a Product</Link>
+                </li>
+                <li>
+                  <Link to="make-admin">Make Admin</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>

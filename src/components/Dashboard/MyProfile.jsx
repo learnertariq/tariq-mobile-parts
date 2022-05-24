@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 import http from "../../service/http";
 import auth from "../../utils/firebase.init";
@@ -8,7 +9,16 @@ import Alert from "../Shared/Alert";
 
 const MyProfile = () => {
   const [user, loading, authError] = useAuthState(auth);
-  let [customError, setCustomError] = useState("");
+  const [customError, setCustomError] = useState("");
+  const {
+    data: userInfo,
+    isLoading,
+    error,
+    refetch,
+  } = useQuery("usersMe", async () => {
+    const { data } = await http.get("/users/me");
+    return data;
+  });
 
   const {
     register,
@@ -25,18 +35,30 @@ const MyProfile = () => {
     }
   }, [user]);
 
+  useEffect(() => {
+    if (userInfo) {
+      setValue("education", userInfo?.education);
+      setValue("location", userInfo?.location);
+      setValue("phone", userInfo?.phone);
+      setValue("linkedIn", userInfo?.linkedIn);
+    }
+  }, [userInfo]);
+
   const onSubmit = async (data, e) => {
-    // try {
-    //   await http.post(`/users/${id}`, data);
-    //   toast.success("Review successfully added");
-    // } catch (error) {
-    //   toast.error(error.message);
-    // }
+    delete data.name;
+    delete data.email;
+    console.log(data);
+    try {
+      await http.patch(`/users/me`, data);
+      toast.success("User updated successfully");
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   return (
     <section>
-      <h2 className="text-xl primary font-bold">Add a review</h2>
+      <h2 className="text-xl primary font-bold">My Profile</h2>
       <form
         style={{ maxWidth: "500px" }}
         className="px-2 mx-auto lg:ml-0"

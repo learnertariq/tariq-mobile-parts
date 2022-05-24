@@ -57,7 +57,6 @@ const Dashboard = () => {
             <li>
               <Link to="my-profile">My Profile</Link>
             </li>
-            {console.log(userInfo)}
             {!userInfo?.isAdmin && (
               <>
                 <li>

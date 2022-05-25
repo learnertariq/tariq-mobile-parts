@@ -16,6 +16,7 @@ const Purchase = () => {
     data: tool,
     isLoading,
     error,
+    refetch,
   } = useQuery("toolWithId", async () => {
     return await http.get(`/tools/${id}`);
   });
@@ -64,6 +65,7 @@ const Purchase = () => {
       });
 
       toast.success("Order successfully placed");
+      refetch();
     } catch (error) {
       toast.error(error.message);
     }

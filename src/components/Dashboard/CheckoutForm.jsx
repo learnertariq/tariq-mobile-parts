@@ -1,9 +1,11 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import http from "../../service/http";
 
 const CheckoutForm = ({ order }) => {
+  const navigate = useNavigate();
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
@@ -78,6 +80,7 @@ const CheckoutForm = ({ order }) => {
         });
 
         toast.success("Order successfully placed");
+        navigate("/dashboard/my-orders");
       } catch (error) {
         toast.error(error.message);
       }

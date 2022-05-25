@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Loading from "../components/Shared/Loading";

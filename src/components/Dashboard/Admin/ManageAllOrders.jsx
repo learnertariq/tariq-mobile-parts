@@ -16,14 +16,12 @@ const ManageAllOrders = () => {
 
   const handleShippingOrder = async (order) => {
     try {
-      await http.patch(`/orders/${deletingOrder._id}`);
+      await http.patch(`/orders/${order._id}`, { shipped: true });
 
-      toast.success("Order successfully canceled");
+      toast.success("Order successfully Shipped");
       refetch();
     } catch (error) {
       toast.error(error.message);
-    } finally {
-      setDeletingOrder(null);
     }
   };
 
@@ -52,7 +50,9 @@ const ManageAllOrders = () => {
                 <td>{order._id}</td>
                 <td>{order.email}</td>
                 <td>
-                  {order.paid && order.shipped && "Shipped"}
+                  {order.paid && order.shipped && (
+                    <span className="text-green-500">Shipped</span>
+                  )}
                   {!order.paid && <span className="text-red-500">Unpaid</span>}
                   {order.paid && !order.shipped && (
                     <button

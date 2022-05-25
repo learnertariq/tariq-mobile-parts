@@ -67,17 +67,7 @@ const AddReview = () => {
             disabled
           />
         </div>
-        <div className="form-control w-full">
-          <label className="label">
-            <span className="label-text">Image link</span>
-          </label>
-          <input
-            type="text"
-            {...register("img", { required: true })}
-            placeholder="Image link"
-            className="input input-bordered input-secondary w-full"
-          />
-        </div>
+
         <div className="form-control w-full">
           <label className="label">
             <span className="label-text">What's on your mind?</span>

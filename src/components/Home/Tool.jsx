@@ -7,14 +7,16 @@ const Tool = ({
   return (
     <div className="card w-full bg-base-100 shadow-xl">
       <figure>
-        <img src={img} alt="Shoes" className="w-full object-cover" />
+        <img
+          style={{ width: "150px", height: "150px" }}
+          src={img}
+          alt="Img"
+          className="object-cover"
+        />
       </figure>
       <div className="card-body">
         <div className="card-actions justify-between items-start flex-col">
-          <h2 className="card-title">
-            {name}
-            {/* <div className="badge badge-secondary">NEW</div> */}
-          </h2>
+          <h2 className="card-title">{name}</h2>
           <div>
             Price:{" "}
             <span className="badge badge-accent text-md font-bold p-2">
@@ -23,7 +25,7 @@ const Tool = ({
           </div>
         </div>
 
-        <p>{desc}</p>
+        <p>{desc.slice(0, 100)}...</p>
         <div className="">
           <div className="min-order">
             Minimum Order:{" "}

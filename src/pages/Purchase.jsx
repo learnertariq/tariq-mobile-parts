@@ -75,6 +75,15 @@ const Purchase = () => {
     <section className="max-w-sm mx-auto mb-12">
       <h2 className="text-4xl mb-8 font-bold text-center">Review The Part</h2>
 
+      <figure className="flex justify-center my-3">
+        <img
+          style={{ width: "150px", height: "150px" }}
+          src={tool?.data?.img}
+          alt="Img"
+          className="object-cover rounded-3xl"
+        />
+      </figure>
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full">
           <label className="label">

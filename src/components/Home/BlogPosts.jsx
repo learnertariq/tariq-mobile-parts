@@ -2,17 +2,17 @@ import React from "react";
 
 const data = [
   {
-    img: "https://i.ibb.co/ZYWb047/ic.webp",
+    img: "https://i.ibb.co/zrftFSY/ics-and-processor.png",
     title: "New IC Released",
     desc: "As we gradually move towards the Internet of Things (IoT), the volume of data is set to skyrocket. With it, the demand for lightweight, high-performance, mobile data processing devices will also increase. To develop such devices, we would first need organic integrated circuits with organic transistors. However, the integration density of these circuits has been low because of incompatibility with existing microfabrication technologies.",
   },
   {
-    img: "https://i.ibb.co/ZYWb047/ic.webp",
-    title: "Sharp Display",
-    desc: "The Super Retina display in iPhone X, iPhone XS, and iPhone XS Max and the Super Retina XDR display in iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 mini, iPhone 13 Pro, and iPhone 13 Pro Max were engineered by Apple to meet our incredibly high standards. We believe these are the best OLED displays that have ever shipped in a smartphone while offering incredible color accuracy.",
+    img: "https://i.ibb.co/58gdZY3/touchscreen.webp",
+    title: "Alive Touchscreen",
+    desc: "LCD compatible with iPhone XR, (black, with frame, AAA, Tianma, with protective screen for display)",
   },
   {
-    img: "https://i.ibb.co/ZYWb047/ic.webp",
+    img: "https://i.ibb.co/cwKT52W/cameras.webp",
     title: "Best Replaceable Camera",
     desc: "The best iPhone for photography allows you take stunning photographs and video, quickly and easily. You'll benefit from high-class image technology that makes the iPhone one of the leading camera phones of today. But which is the best iPhone for photography for you? It's not necessarily the most recent and expensive one...",
   },

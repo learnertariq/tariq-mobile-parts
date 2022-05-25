@@ -5,10 +5,10 @@ import AdminProductsModal from "../../Shared/AdminProductsModal";
 import Loading from "../../Shared/Loading";
 
 const ManageProducts = () => {
-  const { data, isLoading, error, refetch } = useQuery("orders", async () => {
+  const { data, isLoading, error, refetch } = useQuery("tools", async () => {
     return await http.get("/tools");
   });
-  const [deletingOrder, setDeletingProduct] = useState(null);
+  const [deletingProduct, setDeletingProduct] = useState(null);
 
   if (isLoading) return <Loading />;
 
@@ -49,10 +49,10 @@ const ManageProducts = () => {
       </div>
 
       {/* Modal Starts */}
-      {deletingOrder && (
+      {deletingProduct && (
         <AdminProductsModal
           refetch={refetch}
-          deletingProduct={deletingOrder}
+          deletingProduct={deletingProduct}
           setDeletingProduct={setDeletingProduct}
         />
       )}

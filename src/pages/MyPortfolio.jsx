@@ -11,7 +11,7 @@ const MyPortfolio = () => {
 
       <div class="hero bg-base-200 md:px-8 py-8 rounded-3xl">
         <div class="hero-content flex-col lg:flex-row-reverse gap-6 md:gap-24">
-          <img src={myPic} class="max-w-sm rounded-lg shadow-2xl" />
+          <img src={myPic} class="max-w-sm rounded-lg shadow-2xl" alt="" />
           <div>
             <h1 class="text-5xl font-bold">
               Hi, I am
@@ -44,17 +44,17 @@ const MyPortfolio = () => {
                 <h2 className="text-lg">Projects:</h2>
                 <ol className="">
                   <li className="text-blue-500 underline">
-                    <Link to="https://tariq-mobile-parts.web.app/">
+                    <a href="https://tariq-mobile-parts.web.app/">
                       Tariq Mobile Parts
-                    </Link>
+                    </a>
                   </li>
                   <li className="text-blue-500 underline">
-                    <Link to="https://fruits-stock-93d52.web.app/">
+                    <a href="https://fruits-stock-93d52.web.app/">
                       Fruit's Stock
-                    </Link>
+                    </a>
                   </li>
                   <li className="text-blue-500 underline">
-                    <Link to="https://todo-d1553.web.app/">To-Do List</Link>
+                    <a href="https://todo-d1553.web.app/">To-Do List</a>
                   </li>
                 </ol>
               </div>

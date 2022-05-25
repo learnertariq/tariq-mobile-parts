@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+# Tariq Mobile Parts
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Live Site](https://tariq-mobile-parts.web.app/).
+
+# Features and Functionalities
+
+- Admin Dashboard
+- Make Admin
+- Cancel Order
+- Card Payment
+- Add Review
+
+# Technologies
+
+- ReactJs
+- NodeJs
+- Express
+- MongoDB
+- HTML
+- CSS
+- Tailwind
+- DaisyUI
 
 ## Available Scripts
 

@@ -146,7 +146,7 @@ const MyProfile = () => {
         <br />
 
         <button type="submit" className="btn btn-primary tracking-widest">
-          Add Review
+          Update Profile
         </button>
       </form>
     </section>

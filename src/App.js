@@ -21,6 +21,7 @@ import AddAProduct from "./components/Dashboard/Admin/AddAProduct";
 import MakeAdmin from "./components/Dashboard/Admin/MakeAdmin";
 import Blogs from "./pages/Blogs";
 import NotFound from "./pages/NotFound";
+import MyPortfolio from "./pages/MyPortfolio";
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/portfolio" element={<MyPortfolio />} />
+
         <Route
           path="/purchase/:id"
           element={

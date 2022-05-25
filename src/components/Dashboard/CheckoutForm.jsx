@@ -79,7 +79,7 @@ const CheckoutForm = ({ order }) => {
           txId: paymentIntent.id,
         });
 
-        toast.success("Order successfully placed");
+        toast.success("Paid Successfully");
         navigate("/dashboard/my-orders");
       } catch (error) {
         toast.error(error.message);

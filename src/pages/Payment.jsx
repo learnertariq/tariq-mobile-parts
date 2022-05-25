@@ -27,15 +27,15 @@ const Payment = () => {
     <section>
       <h2 className="text-2xl text-primary font-bold">Payment {id}</h2>
       <div className="grid grid-cols-1 p-2 sm:p-8 gap-4">
-        <div class="card bg-base-100 shadow-xl">
-          <div class="card-body">
+        <div className="card bg-base-100 shadow-xl">
+          <div className="card-body">
             <h2 className="card-title">Email: {order?.data?.email}</h2>
             <h2>Tool Id: {order?.data?.tool}</h2>
             <h2>Total price to pay: {order?.data?.total}</h2>
           </div>
         </div>
-        <div class="card bg-base-100 shadow-xl">
-          <div class="card-body">
+        <div className="card bg-base-100 shadow-xl">
+          <div className="card-body">
             <Elements stripe={stripePromise}>
               <CheckoutForm order={order?.data} />
             </Elements>

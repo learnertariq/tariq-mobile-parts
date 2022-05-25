@@ -6,7 +6,7 @@ const Banner = () => {
     <div className="carousel w-full">
       <div id="slide1" className="carousel-item relative w-full">
         <div
-          className="hero"
+          className="hero banner"
           style={{
             backgroundImage: `url(${heroImg})`,
           }}

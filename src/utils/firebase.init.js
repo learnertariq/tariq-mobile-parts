@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBFT8_Rd8GIwrRGQDtcQJ6n9lhYbcHimfU",
-  authDomain: "tariq-mobile-parts.firebaseapp.com",
-  projectId: "tariq-mobile-parts",
-  storageBucket: "tariq-mobile-parts.appspot.com",
-  messagingSenderId: "1059856044657",
-  appId: "1:1059856044657:web:0b4d15435fd0bce6ca41d0",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AD,
+  projectId: process.env.REACT_APP_PID,
+  storageBucket: process.env.REACT_APP_SB,
+  messagingSenderId: process.env.REACT_APP_MSID,
+  appId: process.env.REACT_APP_APPID,
 };
 
 // Initialize Firebase

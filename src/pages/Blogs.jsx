@@ -20,7 +20,7 @@ const data = [
 const Blogs = () => {
   return (
     <section className="container">
-      <h1 className="text-center mt-2 mb-8 text-purple-500 font-bold text-6xl">
+      <h1 className="text-center mt-2 mb-8 text-purple-500 font-bold text-4xl">
         Blogs
       </h1>
       <div className="qnaContainer">

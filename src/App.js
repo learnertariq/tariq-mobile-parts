@@ -20,6 +20,7 @@ import ManageProducts from "./components/Dashboard/Admin/ManageProducts";
 import AddAProduct from "./components/Dashboard/Admin/AddAProduct";
 import MakeAdmin from "./components/Dashboard/Admin/MakeAdmin";
 import Blogs from "./pages/Blogs";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -58,6 +59,9 @@ function App() {
           <Route path="add-product" element={<AddAProduct />} />
           <Route path="make-admin" element={<MakeAdmin />} />
         </Route>
+
+        <Route path="/not-found" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <ToastContainer />

@@ -9,11 +9,11 @@ const MyPortfolio = () => {
         My Portfolio
       </h2>
 
-      <div class="hero bg-base-200 md:px-8 py-8 rounded-3xl">
-        <div class="hero-content flex-col lg:flex-row-reverse gap-6 md:gap-24">
-          <img src={myPic} class="max-w-sm rounded-lg shadow-2xl" alt="" />
+      <div className="hero bg-base-200 md:px-8 py-8 rounded-3xl">
+        <div className="hero-content flex-col lg:flex-row-reverse gap-6 md:gap-24">
+          <img src={myPic} className="max-w-sm rounded-lg shadow-2xl" alt="" />
           <div>
-            <h1 class="text-5xl font-bold">
+            <h1 className="text-5xl font-bold">
               Hi, I am
               <br />
               Md Tariqul Islam
@@ -59,7 +59,7 @@ const MyPortfolio = () => {
                 </ol>
               </div>
             </div>
-            <button class="btn btn-primary">Get Started</button>
+            <button className="btn btn-primary">Get Started</button>
           </div>
         </div>
       </div>

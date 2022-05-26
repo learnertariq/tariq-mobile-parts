@@ -98,13 +98,13 @@ const CheckoutForm = ({ order }) => {
             style: {
               base: {
                 fontSize: "16px",
-                color: "#fff",
+                color: "#424770",
                 "::placeholder": {
-                  color: "#aaa",
+                  color: "#aab7c4",
                 },
               },
               invalid: {
-                color: "#fe2146",
+                color: "#9e2146",
               },
             },
           }}

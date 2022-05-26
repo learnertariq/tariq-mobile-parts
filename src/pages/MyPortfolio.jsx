@@ -22,7 +22,7 @@ const MyPortfolio = () => {
               <h2 className="text-xl">
                 Email:{" "}
                 <a
-                  className="text-blue-400"
+                  className="text-blue-500 font-bold"
                   href="mailto:programmertariq@gmail.com"
                 >
                   programmertariq@gmail.com
@@ -30,13 +30,13 @@ const MyPortfolio = () => {
               </h2>
               <h2 className="text-lg">
                 College:{" "}
-                <span className="text-green-400">
+                <span className="text-green-500 font-bold">
                   Paikgacha, College. Social Science, 2017-2024
                 </span>
               </h2>
               <h2 className="text-lg">
                 Skills: <br />
-                <span className="text-green-400">
+                <span className="text-green-500 font-bold">
                   ReactJs, JavaScript, NodeJs, HTML, CSS, Java, DSA
                 </span>
               </h2>

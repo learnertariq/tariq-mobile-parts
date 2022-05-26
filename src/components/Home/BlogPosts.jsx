@@ -24,8 +24,8 @@ const BlogPosts = () => {
       <h2 className="text-4xl text-center mb-6">Recent Blog News</h2>
       <div className="posts-container grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {data.map((item, index) => (
-          <div key={index} className="blog-post bg-indigo-900 rounded-xl">
-            <div className="card lg:card-side bg-base-100 shadow-xl">
+          <div key={index} className="blog-post rounded-xl">
+            <div className="card lg:card-side bg-base-100 shadow-xl p-2">
               <figure>
                 <img src={item.img} alt="Album" />
               </figure>

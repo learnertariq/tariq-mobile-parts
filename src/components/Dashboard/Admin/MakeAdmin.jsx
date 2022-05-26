@@ -44,7 +44,7 @@ const MakeAdmin = () => {
                   {!user.isAdmin && (
                     <button
                       onClick={() => handleMakeAdmin(user)}
-                      className="btn text-red-700 btn-xs"
+                      className="btn btn-primary btn-xs"
                     >
                       Make Admin
                     </button>

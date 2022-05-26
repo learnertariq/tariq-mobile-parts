@@ -4,22 +4,71 @@ import "../styles/Blogs.css";
 
 const data = [
   {
-    q: "Difference between JavaScript and NodeJs",
+    q: "How will you improve the performance of a React Application?",
     img: "",
     a: [
-      "JavaScript is a programming language running in any browser with the power of browser engine. And NodeJs is a JavaScript runtime engine.",
-      "JavaScript runs on the client side. But NodeJs is used to create backend for the client.",
-      "JavaScript runs on most of the modern browser like Google Chrome, Mozilla Firefox, Apple Safari, Opera, Dolphin Browser etc. But Nodejs uses Google Chrome's V8 engine to parse the JavaScript code to run outside of the browsers and mostly on the servers.",
-      " Using JavaScript you can add HTML and CSS on the DOM. But using Nodejs you can create API to play with data from the server.",
-      "Angular, React.js, Vue.js, Ember.js, Meteor, etc are JavaScript frameworks/libraries. Express.js, Kao.js, Socket.io, Nest.js, etc are Node.js frameworks.",
-      "JavaScript is mainly used to create frontend. But Node.js is mainly used to create backend server.",
+      "React only renders components when the state of a component changes. If we extract the part of the code in a local component, then only the component will be rendered and no unnecessary render will happen.",
+      "Wrapping a child component inside React.memo higher order component, we can prevent rerendering a component if the props received in that component never changes.",
+      "But if props are object type, say, a function, we have to wrap the handler inside a useCallback function so that the component never rerenders unnecessarily.",
+      "If we have an expensive function to calculate, we have to wrap the function inside a useMemo Hook to only render or calculate that function only when the dependency changes",
+      "React create a huge size bundle file bundling all components. But if we split out code with dynamic import wapping component's import with React.lazy higher order function and render the components inside React.Suspense then react only downloads the code for this component.",
+      "By using windowing libraries like React-Window or React-Virtualized we can only render to the DOM only the visible part of the viewport to the user",
+      "With React-lazyload or React-lazy-load-image component images will only rendered exactly before when we are about to view to portion of the component that can improve react app performance",
+    ],
+  },
+  {
+    q: "What are the different ways to manage a state in a React Application?",
+    img: "",
+    a: [
+      "Initially we use useState and useReducer to manage local and global states",
+      "There are 4 kinda states in a React application, Local State, Global State, Server State and URL State",
+      "Local State is used inside a local component, we use useState hook to manage local state",
+      "Global State is necessary when we update data in multiple components",
+      "Redux is one of the best library to manage Global state",
+      "Zustand library simplify our work without writing any boilerplate code.",
+      "Server State is used at the time of fetching data from an external server.",
+      "swr and react-query manage server side state memory efficiently",
+      "useLocation and useHistory help us to effectively manage our URL state",
+    ],
+  },
+  {
+    q: "How does prototypical inheritance work?",
+    img: "",
+    a: [
+      "JavaScript Objects have a property called [[prototype]]",
+      "In modern JavaScript the property is __proto__",
+      "By following the prototypical inheritance system objectA can borrow some method from objectB",
+      "There is no class feature in core JavaScript, But class in ES6 is specially a syntactical sugar over javascript's prototypical inheritance.",
+      "Class instances can extend their methods from another instances with the help of __proto__ method",
+    ],
+  },
+  {
+    q: "Why you do not set the state directly in React?",
+    img: "",
+    a: [
+      "Firstly, We use state in a react application, so that we can rerender the DOM efficiently and effectively.",
+      "State or useState hook causes rerendering the DOM",
+      "If you write code <code> products = [...]</code> in this way, our DOM will not be rerendered, and we will not see any changes or effects on the UI",
+      "And If we use <code>setProducts([...])</code> like that our DOM will be rerendered and we experience dynamic UI",
+    ],
+  },
+  {
+    q: "What is a unit test? Why should write unit tests?",
+    img: "",
+    a: [
+      "Unit test is testing small parts/component of our application in isolation",
+      "We can split testing methods in 3. Unit Tests, Integration Tests and End-to-End Tests",
+      "With Unit testing we can identify bugs and problems before publishing to production.",
+      "We should write Unit Tests because, it is easy to write",
+      "Unit Tests is less time consuming",
+      "If we write unit tests, we will face less bugs in integration and end-to-end testing, and lastly, users will face less problems on the production application",
     ],
   },
 ];
 
 const Blogs = () => {
   return (
-    <section className="container">
+    <section className="container mx-auto">
       <h1 className="text-center mt-2 mb-8 text-purple-500 font-bold text-4xl">
         Blogs
       </h1>
@@ -27,6 +76,25 @@ const Blogs = () => {
         {data.map((question, index) => (
           <QuestionCard key={index} question={question} />
         ))}
+
+        <div className="question question-1 mt-4 mb-5 px-6 py-5 lg:p-5">
+          <div className="qna mx-auto">
+            <div className="q mb-3">
+              <h3 className="text-2xl text-green-700">
+                Implementing a search to find products by name in an Array
+              </h3>
+            </div>
+            <div className="a">
+              <code>
+                const products = [...];
+                <br /> const foundProduct = products.find(product =&gt;
+                product.name === "Your Query");
+                <br />
+                console.log(foundProduct)
+              </code>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
